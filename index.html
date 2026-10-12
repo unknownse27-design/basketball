@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Basketball Trainer - Drills</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- HEADER -->
+
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="brand-ball">
+                🏀
+            </div>
+
+            <div class="brand-text">
+
+                <h1>
+                    BASKETBALL
+                    <span>TRAINER</span>
+                </h1>
+
+            </div>
+
+        </div>
+
+
+        <div class="current-goal">
+
+            <div class="goal-target">
+                🎯
+            </div>
+
+            <div>
+
+                <div class="goal-label">
+                    Current Goal
+                </div>
+
+                <div
+                    class="goal-value"
+                    id="current-goal"
+                >
+                    80% Accuracy
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- DRILLS PAGE -->
+
+    <main class="drills-page">
+
+        <div class="drills-container">
+
+
+            <!-- TITLE -->
+
+            <div class="drills-header">
+
+                <button
+                    class="back-button"
+                    id="drills-back"
+                >
+                    ← Back
+                </button>
+
+
+                <div class="drills-title">
+
+                    <div class="drills-title-icon">
+                        🏀
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Shooting Drills
+                        </h2>
+
+                        <p>
+                            Practice with drills designed to improve your shooting.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RECOMMENDATION -->
+
+            <section class="recommendation-card">
+
+                <div class="recommendation-icon">
+                    💡
+                </div>
+
+                <div>
+
+                    <span>
+                        RECOMMENDED FOR YOU
+                    </span>
+
+                    <h3 id="recommendation-title">
+                        Start with Form Shooting
+                    </h3>
+
+                    <p id="recommendation-text">
+                        Build a consistent shooting form before moving farther away from the basket.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- DRILL FILTERS -->
+
+            <div class="drill-filters">
+
+                <button
+                    class="filter-button active"
+                    data-filter="all"
+                >
+                    All Drills
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-filter="form"
+                >
+                    Form
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-filter="midrange"
+                >
+                    Mid-Range
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-filter="three"
+                >
+                    3-Point
+                </button>
+
+                <button
+                    class="filter-button"
+                    data-filter="free"
+                >
+                    Free Throws
+                </button>
+
+            </div>
+
+
+
+            <!-- DRILLS -->
+
+            <div class="drill-grid">
+
+
+                <!-- FORM SHOOTING -->
+
+                <article
+                    class="drill-card"
+                    data-category="form"
+                >
+
+                    <div class="drill-top">
+
+                        <div class="drill-icon">
+                            🎯
+                        </div>
+
+                        <span class="difficulty easy">
+                            Beginner
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Form Shooting
+                    </h3>
+
+                    <p>
+                        Practice your shooting form close to the basket.
+                        Focus on balance, hand placement, and follow-through.
+                    </p>
+
+
+                    <div class="drill-info">
+
+                        <div>
+                            ⏱️
+                            <span>
+                                5–10 min
+                            </span>
+                        </div>
+
+                        <div>
+                            🏀
+                            <span>
+                                25 shots
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="start-drill"
+                        data-drill="Form Shooting"
+                    >
+                        Start Drill
+                    </button>
+
+                </article>
+
+
+
+                <!-- SPOT SHOOTING -->
+
+                <article
+                    class="drill-card"
+                    data-category="midrange"
+                >
+
+                    <div class="drill-top">
+
+                        <div class="drill-icon">
+                            📍
+                        </div>
+
+                        <span class="difficulty medium">
+                            Intermediate
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Spot Shooting
+                    </h3>
+
+                    <p>
+                        Choose several spots around the court and take
+                        repeated shots from each location.
+                    </p>
+
+
+                    <div class="drill-info">
+
+                        <div>
+                            ⏱️
+                            <span>
+                                10 min
+                            </span>
+                        </div>
+
+                        <div>
+                            🏀
+                            <span>
+                                50 shots
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="start-drill"
+                        data-drill="Spot Shooting"
+                    >
+                        Start Drill
+                    </button>
+
+                </article>
+
+
+
+                <!-- MID-RANGE -->
+
+                <article
+                    class="drill-card"
+                    data-category="midrange"
+                >
+
+                    <div class="drill-top">
+
+                        <div class="drill-icon">
+                            🏀
+                        </div>
+
+                        <span class="difficulty medium">
+                            Intermediate
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Mid-Range Challenge
+                    </h3>
+
+                    <p>
+                        Take controlled shots from different mid-range
+                        areas while focusing on consistency.
+                    </p>
+
+
+                    <div class="drill-info">
+
+                        <div>
+                            ⏱️
+                            <span>
+                                10–15 min
+                            </span>
+                        </div>
+
+                        <div>
+                            🏀
+                            <span>
+                                30 shots
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="start-drill"
+                        data-drill="Mid-Range Challenge"
+                    >
+                        Start Drill
+                    </button>
+
+                </article>
+
+
+
+                <!-- THREE POINT -->
+
+                <article
+                    class="drill-card"
+                    data-category="three"
+                >
+
+                    <div class="drill-top">
+
+                        <div class="drill-icon">
+                            🔥
+                        </div>
+
+                        <span class="difficulty hard">
+                            Advanced
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        3-Point Shooting
+                    </h3>
+
+                    <p>
+                        Work through different 3-point spots and focus
+                        on a consistent shooting motion.
+                    </p>
+
+
+                    <div class="drill-info">
+
+                        <div>
+                            ⏱️
+                            <span>
+                                10–15 min
+                            </span>
+                        </div>
+
+                        <div>
+                            🏀
+                            <span>
+                                25 shots
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="start-drill"
+                        data-drill="3-Point Shooting"
+                    >
+                        Start Drill
+                    </button>
+
+                </article>
+
+
+
+                <!-- FREE THROW -->
+
+                <article
+                    class="drill-card"
+                    data-category="free"
+                >
+
+                    <div class="drill-top">
+
+                        <div class="drill-icon">
+                            🏀
+                        </div>
+
+                        <span class="difficulty easy">
+                            Beginner
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Free Throw Practice
+                    </h3>
+
+                    <p>
+                        Practice your free throws while developing
+                        a consistent routine before every shot.
+                    </p>
+
+
+                    <div class="drill-info">
+
+                        <div>
+                            ⏱️
+                            <span>
+                                5–10 min
+                            </span>
+                        </div>
+
+                        <div>
+                            🏀
+                            <span>
+                                20 shots
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="start-drill"
+                        data-drill="Free Throw Practice"
+                    >
+                        Start Drill
+                    </button>
+
+                </article>
+
+
+
+                <!-- CATCH AND SHOOT -->
+
+                <article
+                    class="drill-card"
+                    data-category="three"
+                >
+
+                    <div class="drill-top">
+
+                        <div class="drill-icon">
+                            ⚡
+                        </div>
+
+                        <span class="difficulty hard">
+                            Advanced
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Catch & Shoot
+                    </h3>
+
+                    <p>
+                        Practice getting your feet set quickly and
+                        shooting smoothly after receiving the ball.
+                    </p>
+
+
+                    <div class="drill-info">
+
+                        <div>
+                            ⏱️
+                            <span>
+                                10 min
+                            </span>
+                        </div>
+
+                        <div>
+                            🏀
+                            <span>
+                                30 shots
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="start-drill"
+                        data-drill="Catch & Shoot"
+                    >
+                        Start Drill
+                    </button>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- BOTTOM NAVIGATION -->
+
+    <nav class="bottom-nav">
+
+        <a
+            href="../index.html"
+            class="nav-item"
+        >
+
+            <span>
+                ⌂
+            </span>
+
+            Home
+
+        </a>
+
+
+        <a
+            href="../setup/setup.html"
+            class="nav-item"
+        >
+
+            <span>
+                🎯
+            </span>
+
+            Goal
+
+        </a>
+
+
+        <a
+            href="../shooting/shooting.html"
+            class="nav-item"
+        >
+
+            <span>
+                🏀
+            </span>
+
+            Shooting
+
+        </a>
+
+
+        <a
+            href="../results/results.html"
+            class="nav-item"
+        >
+
+            <span>
+                ▥
+            </span>
+
+            Results
+
+        </a>
+
+
+        <a
+            href="drills.html"
+            class="nav-item active"
+        >
+
+            <span>
+                △
+            </span>
+
+            Drills
+
+        </a>
+
+
+        <a
+            href="../history/history.html"
+            class="nav-item"
+        >
+
+            <span>
+                ◷
+            </span>
+
+            History
+
+        </a>
+
+    </nav>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
