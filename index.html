@@ -1,140 +1,947 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Trainer</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>Basketball Trainer - Drills</title>
-
+    <!-- Font Awesome -->
     <link
         rel="stylesheet"
-        href="style.css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     >
 
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- ==================== HOME ==================== -->
 
-    <!-- HEADER -->
+    <section id="home-page" class="page active">
 
-    <header class="top-header">
+        <header class="header">
+            <div class="logo">🏀</div>
 
-        <div class="brand">
+            <h1>Basketball Trainer</h1>
 
-            <div class="brand-ball">
-                🏀
-            </div>
+            <p>Track your shots. Improve your game.</p>
+        </header>
 
-            <div class="brand-text">
+        <main>
 
-                <h1>
-                    BASKETBALL
-                    <span>TRAINER</span>
-                </h1>
+            <section class="start-section">
 
-            </div>
+                <h2>Ready to Shoot?</h2>
 
-        </div>
+                <p>
+                    Set a goal, track your shots, and get personalized
+                    feedback to help improve your shooting.
+                </p>
 
-
-        <div class="current-goal">
-
-            <div class="goal-target">
-                🎯
-            </div>
-
-            <div>
-
-                <div class="goal-label">
-                    Current Goal
-                </div>
-
-                <div
-                    class="goal-value"
-                    id="current-goal"
-                >
-                    80% Accuracy
-                </div>
-
-            </div>
-
-        </div>
-
-    </header>
-
-
-
-    <!-- DRILLS PAGE -->
-
-    <main class="drills-page">
-
-        <div class="drills-container">
-
-
-            <!-- TITLE -->
-
-            <div class="drills-header">
-
-                <button
-                    class="back-button"
-                    id="drills-back"
-                >
-                    ← Back
+                <button id="go-setup" class="main-button">
+                    START SESSION
                 </button>
 
+            </section>
 
-                <div class="drills-title">
 
-                    <div class="drills-title-icon">
-                        🏀
+            <!-- Recent Session -->
+
+            <section class="recent-section">
+
+                <h2>Recent Session</h2>
+
+                <div id="recent-session">
+
+                    <div class="stats-card">
+
+                        <div class="stat">
+                            <span id="home-makes" class="stat-number">0</span>
+                            <span class="stat-label">Makes</span>
+                        </div>
+
+                        <div class="stat">
+                            <span id="home-misses" class="stat-number">0</span>
+                            <span class="stat-label">Misses</span>
+                        </div>
+
+                        <div class="stat">
+                            <span id="home-percentage" class="stat-number">0%</span>
+                            <span class="stat-label">Accuracy</span>
+                        </div>
+
                     </div>
 
-                    <div>
+                </div>
 
-                        <h2>
-                            Shooting Drills
-                        </h2>
+                <p id="no-session" class="no-session">
+                    No previous sessions yet.
+                </p>
+
+            </section>
+
+
+            <!-- Features -->
+
+            <section class="features">
+
+                <h2>What You Can Track</h2>
+
+                <div class="feature-grid">
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">🎯</div>
+
+                        <h3>Set Goals</h3>
 
                         <p>
-                            Practice with drills designed to improve your shooting.
+                            Choose how many shots you want to take
+                            and how many you want to make.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">📊</div>
+
+                        <h3>Track Stats</h3>
+
+                        <p>
+                            See your makes, misses, attempts,
+                            and shooting percentage.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">🏀</div>
+
+                        <h3>Get Drills</h3>
+
+                        <p>
+                            Receive shooting drills based on
+                            your performance.
+                        </p>
+
+                    </div>
+
+
+                    <div class="feature-card">
+
+                        <div class="feature-icon">📈</div>
+
+                        <h3>Track Progress</h3>
+
+                        <p>
+                            Save your sessions and see how your
+                            shooting improves over time.
                         </p>
 
                     </div>
 
                 </div>
 
-            </div>
+            </section>
+
+        </main>
+
+
+        <footer>
+            <p>Basketball Trainer</p>
+        </footer>
+
+    </section>
 
 
 
-            <!-- RECOMMENDATION -->
+    <!-- ==================== GOAL SETUP ==================== -->
 
-            <section class="recommendation-card">
+    <section id="setup-page" class="page">
 
-                <div class="recommendation-icon">
-                    💡
+        <main class="page-container">
+
+            <button class="back-button" data-page="home-page">
+                ← Back
+            </button>
+
+
+            <header class="page-header">
+
+                <div class="page-icon">🎯</div>
+
+                <h1>Set Your Shooting Goal</h1>
+
+                <p>
+                    Choose how many shots you want to take.
+                </p>
+
+            </header>
+
+
+            <!-- Goal Choices -->
+
+            <section class="card">
+
+                <h2>Choose a Goal</h2>
+
+                <div class="goal-grid">
+
+                    <button
+                        class="goal-button"
+                        data-attempts="25"
+                        data-makes="20"
+                    >
+                        <strong>20 / 25</strong>
+                        <span>80% goal</span>
+                    </button>
+
+
+                    <button
+                        class="goal-button selected"
+                        data-attempts="50"
+                        data-makes="40"
+                    >
+                        <strong>40 / 50</strong>
+                        <span>80% goal</span>
+                    </button>
+
+
+                    <button
+                        class="goal-button"
+                        data-attempts="100"
+                        data-makes="80"
+                    >
+                        <strong>80 / 100</strong>
+                        <span>80% goal</span>
+                    </button>
+
+
+                    <button
+                        class="goal-button"
+                        data-attempts="custom"
+                        data-makes="custom"
+                    >
+                        <strong>Custom</strong>
+                        <span>Create your own goal</span>
+                    </button>
+
                 </div>
+
+            </section>
+
+
+            <!-- Custom Goal -->
+
+            <section id="custom-section" class="card hidden">
+
+                <h2>Custom Goal</h2>
+
+                <label for="attempts">
+                    Total Attempts
+                </label>
+
+                <input
+                    type="number"
+                    id="attempts"
+                    min="1"
+                    value="50"
+                >
+
+
+                <label for="target-makes">
+                    Target Makes
+                </label>
+
+                <input
+                    type="number"
+                    id="target-makes"
+                    min="0"
+                    value="40"
+                >
+
+            </section>
+
+
+            <!-- Goal Preview -->
+
+            <section class="goal-preview">
+
+                <p>Your Goal</p>
+
+                <strong>
+
+                    <span id="preview-makes">40</span>
+
+                    /
+
+                    <span id="preview-attempts">50</span>
+
+                </strong>
+
+                <span>
+                    Target:
+                    <b id="preview-percentage">80%</b>
+                </span>
+
+            </section>
+
+
+            <button
+                id="start-button"
+                class="main-button full"
+            >
+                START SHOOTING
+            </button>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ==================== SHOOTING SESSION ==================== -->
+
+    <section id="session-page" class="page">
+
+        <main class="page-container session-page">
+
+            <header class="session-header">
 
                 <div>
 
-                    <span>
-                        RECOMMENDED FOR YOU
+                    <span class="orange-text">
+                        🏀 SHOOTING SESSION
                     </span>
 
-                    <h3 id="recommendation-title">
-                        Start with Form Shooting
-                    </h3>
+                    <h1>Keep Shooting!</h1>
 
-                    <p id="recommendation-text">
-                        Build a consistent shooting form before moving farther away from the basket.
+                </div>
+
+
+                <button
+                    id="end-session"
+                    class="small-button"
+                >
+                    End Session
+                </button>
+
+            </header>
+
+
+            <!-- Progress -->
+
+            <section class="card">
+
+                <div class="shot-row">
+
+                    <span>Shot</span>
+
+                    <strong>
+
+                        <span id="current-shot">0</span>
+
+                        /
+
+                        <span id="total-shots">50</span>
+
+                    </strong>
+
+                </div>
+
+
+                <div class="progress-bar">
+
+                    <div
+                        id="progress"
+                        class="progress"
+                    ></div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Live Stats -->
+
+            <section class="stat-grid">
+
+                <div class="big-stat make-stat">
+
+                    <span class="big-number" id="session-makes">
+                        0
+                    </span>
+
+                    <span>
+                        Makes
+                    </span>
+
+                </div>
+
+
+                <div class="big-stat miss-stat">
+
+                    <span class="big-number" id="session-misses">
+                        0
+                    </span>
+
+                    <span>
+                        Misses
+                    </span>
+
+                </div>
+
+
+                <div class="big-stat">
+
+                    <span
+                        class="big-number"
+                        id="session-percentage"
+                    >
+                        0%
+                    </span>
+
+                    <span>
+                        Accuracy
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <!-- Shooting Buttons -->
+
+            <section class="shooting-card card">
+
+                <h2>Did You Make It?</h2>
+
+                <p>
+                    Select the result of your shot.
+                </p>
+
+
+                <div class="shot-buttons">
+
+                    <button
+                        id="make-button"
+                        class="shot-button make-button"
+                    >
+                        <span>✓</span>
+                        MADE IT
+                    </button>
+
+
+                    <button
+                        id="miss-button"
+                        class="shot-button miss-button"
+                    >
+                        <span>✕</span>
+                        MISSED
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Goal -->
+
+            <section class="session-goal">
+
+                <span>
+                    Goal:
+                </span>
+
+                <strong>
+
+                    <span id="session-target-makes">
+                        40
+                    </span>
+
+                    /
+
+                    <span id="session-target-attempts">
+                        50
+                    </span>
+
+                </strong>
+
+            </section>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ==================== RESULTS ==================== -->
+
+    <section id="results-page" class="page">
+
+        <main class="page-container">
+
+            <header class="page-header">
+
+                <div class="page-icon">📊</div>
+
+                <h1>Session Results</h1>
+
+                <p>
+                    Here's how you did.
+                </p>
+
+            </header>
+
+
+            <!-- Main Result -->
+
+            <section class="result-main card">
+
+                <p>Your Shooting Accuracy</p>
+
+                <div
+                    id="result-percentage"
+                    class="result-percentage"
+                >
+                    0%
+                </div>
+
+                <h2 id="result-message">
+                    Great job!
+                </h2>
+
+                <p id="result-submessage">
+                    Keep practicing and improving.
+                </p>
+
+            </section>
+
+
+            <!-- Stats -->
+
+            <section class="result-stats">
+
+                <div class="result-stat">
+
+                    <span
+                        id="result-makes"
+                        class="result-number"
+                    >
+                        0
+                    </span>
+
+                    <span>Made</span>
+
+                </div>
+
+
+                <div class="result-stat">
+
+                    <span
+                        id="result-misses"
+                        class="result-number"
+                    >
+                        0
+                    </span>
+
+                    <span>Missed</span>
+
+                </div>
+
+
+                <div class="result-stat">
+
+                    <span
+                        id="result-attempts"
+                        class="result-number"
+                    >
+                        0
+                    </span>
+
+                    <span>Attempts</span>
+
+                </div>
+
+            </section>
+
+
+            <!-- Goal -->
+
+            <section class="card">
+
+                <div class="result-goal">
+
+                    <span>
+                        Your Goal
+                    </span>
+
+                    <strong id="result-goal">
+                        40 / 50
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- Feedback -->
+
+            <section class="card feedback-card">
+
+                <h2>Coach's Feedback</h2>
+
+                <p id="feedback">
+                    Keep working on your consistency.
+                </p>
+
+            </section>
+
+
+            <!-- Buttons -->
+
+            <div class="button-stack">
+
+                <button
+                    id="view-drills"
+                    class="main-button"
+                >
+                    VIEW RECOMMENDED DRILLS
+                </button>
+
+
+                <button
+                    class="secondary-button"
+                    data-page="setup-page"
+                >
+                    SHOOT AGAIN
+                </button>
+
+
+                <button
+                    class="secondary-button"
+                    data-page="home-page"
+                >
+                    BACK TO HOME
+                </button>
+
+            </div>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ==================== DRILLS ==================== -->
+
+    <section id="drills-page" class="page">
+
+        <main class="page-container">
+
+            <button
+                class="back-button"
+                data-page="home-page"
+            >
+                ← Back
+            </button>
+
+
+            <header class="page-header">
+
+                <div class="page-icon">🏀</div>
+
+                <h1>Shooting Drills</h1>
+
+                <p>
+                    Practice these drills to improve your shooting.
+                </p>
+
+            </header>
+
+
+            <!-- Recommendation -->
+
+            <section class="card recommendation-card">
+
+                <h2>Recommended For You</h2>
+
+                <p id="drill-recommendation">
+                    Start with basic shooting drills and focus
+                    on consistency.
+                </p>
+
+            </section>
+
+
+            <!-- Drill 1 -->
+
+            <section class="drill-card">
+
+                <div class="drill-number">
+                    01
+                </div>
+
+                <div class="drill-content">
+
+                    <h2>Form Shooting</h2>
+
+                    <p>
+                        Practice your shooting form from a short
+                        distance. Focus on keeping your movements
+                        controlled and consistent.
+                    </p>
+
+                    <div class="drill-info">
+
+                        <span>
+                            ⏱ 5 minutes
+                        </span>
+
+                        <span>
+                            🎯 Focus: Form
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Drill 2 -->
+
+            <section class="drill-card">
+
+                <div class="drill-number">
+                    02
+                </div>
+
+                <div class="drill-content">
+
+                    <h2>Spot Shooting</h2>
+
+                    <p>
+                        Choose several spots around the court.
+                        Take a set number of shots from each spot
+                        and try to stay consistent.
+                    </p>
+
+                    <div class="drill-info">
+
+                        <span>
+                            ⏱ 10 minutes
+                        </span>
+
+                        <span>
+                            🎯 Focus: Accuracy
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Drill 3 -->
+
+            <section class="drill-card">
+
+                <div class="drill-number">
+                    03
+                </div>
+
+                <div class="drill-content">
+
+                    <h2>Make 5 in a Row</h2>
+
+                    <p>
+                        Pick a comfortable shooting spot and
+                        try to make five shots in a row. Move to
+                        another spot when you complete the challenge.
+                    </p>
+
+                    <div class="drill-info">
+
+                        <span>
+                            ⏱ 10 minutes
+                        </span>
+
+                        <span>
+                            🎯 Focus: Consistency
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Drill 4 -->
+
+            <section class="drill-card">
+
+                <div class="drill-number">
+                    04
+                </div>
+
+                <div class="drill-content">
+
+                    <h2>Five Spot Challenge</h2>
+
+                    <p>
+                        Shoot from five different locations.
+                        Take five shots from each location and
+                        record how many you make.
+                    </p>
+
+                    <div class="drill-info">
+
+                        <span>
+                            ⏱ 15 minutes
+                        </span>
+
+                        <span>
+                            🎯 Focus: Game Shooting
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <button
+                class="main-button full"
+                data-page="setup-page"
+            >
+                START ANOTHER SESSION
+            </button>
+
+        </main>
+
+    </section>
+
+
+
+    <!-- ==================== HISTORY ==================== -->
+
+    <section id="history-page" class="page">
+
+        <main class="page-container">
+
+            <button
+                class="back-button"
+                data-page="home-page"
+            >
+                ← Back
+            </button>
+
+
+            <header class="page-header">
+
+                <div class="page-icon">📈</div>
+
+                <h1>Shot History</h1>
+
+                <p>
+                    See how your shooting has improved over time.
+                </p>
+
+            </header>
+
+
+            <!-- Overall Stats -->
+
+            <section class="card">
+
+                <h2>Overall Stats</h2>
+
+                <div class="stats-card">
+
+                    <div class="stat">
+
+                        <span
+                            id="history-makes"
+                            class="stat-number"
+                        >
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Total Makes
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span
+                            id="history-attempts"
+                            class="stat-number"
+                        >
+                            0
+                        </span>
+
+                        <span class="stat-label">
+                            Total Attempts
+                        </span>
+
+                    </div>
+
+
+                    <div class="stat">
+
+                        <span
+                            id="history-percentage"
+                            class="stat-number"
+                        >
+                            0%
+                        </span>
+
+                        <span class="stat-label">
+                            Overall Accuracy
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- History List -->
+
+            <section class="card">
+
+                <div class="history-title">
+
+                    <h2>Previous Sessions</h2>
+
+                    <button
+                        id="clear-history"
+                        class="small-button"
+                    >
+                        Clear History
+                    </button>
+
+                </div>
+
+
+                <div id="history-list">
+
+                    <p class="no-session">
+                        No sessions recorded yet.
                     </p>
 
                 </div>
@@ -142,514 +949,75 @@
             </section>
 
 
-
-            <!-- DRILL FILTERS -->
-
-            <div class="drill-filters">
+            <div class="button-stack">
 
                 <button
-                    class="filter-button active"
-                    data-filter="all"
+                    class="main-button"
+                    data-page="setup-page"
                 >
-                    All Drills
+                    START NEW SESSION
                 </button>
 
-                <button
-                    class="filter-button"
-                    data-filter="form"
-                >
-                    Form
-                </button>
 
                 <button
-                    class="filter-button"
-                    data-filter="midrange"
+                    class="secondary-button"
+                    data-page="home-page"
                 >
-                    Mid-Range
-                </button>
-
-                <button
-                    class="filter-button"
-                    data-filter="three"
-                >
-                    3-Point
-                </button>
-
-                <button
-                    class="filter-button"
-                    data-filter="free"
-                >
-                    Free Throws
+                    BACK TO HOME
                 </button>
 
             </div>
 
+        </main>
 
+    </section>
 
-            <!-- DRILLS -->
 
-            <div class="drill-grid">
 
-
-                <!-- FORM SHOOTING -->
-
-                <article
-                    class="drill-card"
-                    data-category="form"
-                >
-
-                    <div class="drill-top">
-
-                        <div class="drill-icon">
-                            🎯
-                        </div>
-
-                        <span class="difficulty easy">
-                            Beginner
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Form Shooting
-                    </h3>
-
-                    <p>
-                        Practice your shooting form close to the basket.
-                        Focus on balance, hand placement, and follow-through.
-                    </p>
-
-
-                    <div class="drill-info">
-
-                        <div>
-                            ⏱️
-                            <span>
-                                5–10 min
-                            </span>
-                        </div>
-
-                        <div>
-                            🏀
-                            <span>
-                                25 shots
-                            </span>
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="start-drill"
-                        data-drill="Form Shooting"
-                    >
-                        Start Drill
-                    </button>
-
-                </article>
-
-
-
-                <!-- SPOT SHOOTING -->
-
-                <article
-                    class="drill-card"
-                    data-category="midrange"
-                >
-
-                    <div class="drill-top">
-
-                        <div class="drill-icon">
-                            📍
-                        </div>
-
-                        <span class="difficulty medium">
-                            Intermediate
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Spot Shooting
-                    </h3>
-
-                    <p>
-                        Choose several spots around the court and take
-                        repeated shots from each location.
-                    </p>
-
-
-                    <div class="drill-info">
-
-                        <div>
-                            ⏱️
-                            <span>
-                                10 min
-                            </span>
-                        </div>
-
-                        <div>
-                            🏀
-                            <span>
-                                50 shots
-                            </span>
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="start-drill"
-                        data-drill="Spot Shooting"
-                    >
-                        Start Drill
-                    </button>
-
-                </article>
-
-
-
-                <!-- MID-RANGE -->
-
-                <article
-                    class="drill-card"
-                    data-category="midrange"
-                >
-
-                    <div class="drill-top">
-
-                        <div class="drill-icon">
-                            🏀
-                        </div>
-
-                        <span class="difficulty medium">
-                            Intermediate
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Mid-Range Challenge
-                    </h3>
-
-                    <p>
-                        Take controlled shots from different mid-range
-                        areas while focusing on consistency.
-                    </p>
-
-
-                    <div class="drill-info">
-
-                        <div>
-                            ⏱️
-                            <span>
-                                10–15 min
-                            </span>
-                        </div>
-
-                        <div>
-                            🏀
-                            <span>
-                                30 shots
-                            </span>
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="start-drill"
-                        data-drill="Mid-Range Challenge"
-                    >
-                        Start Drill
-                    </button>
-
-                </article>
-
-
-
-                <!-- THREE POINT -->
-
-                <article
-                    class="drill-card"
-                    data-category="three"
-                >
-
-                    <div class="drill-top">
-
-                        <div class="drill-icon">
-                            🔥
-                        </div>
-
-                        <span class="difficulty hard">
-                            Advanced
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        3-Point Shooting
-                    </h3>
-
-                    <p>
-                        Work through different 3-point spots and focus
-                        on a consistent shooting motion.
-                    </p>
-
-
-                    <div class="drill-info">
-
-                        <div>
-                            ⏱️
-                            <span>
-                                10–15 min
-                            </span>
-                        </div>
-
-                        <div>
-                            🏀
-                            <span>
-                                25 shots
-                            </span>
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="start-drill"
-                        data-drill="3-Point Shooting"
-                    >
-                        Start Drill
-                    </button>
-
-                </article>
-
-
-
-                <!-- FREE THROW -->
-
-                <article
-                    class="drill-card"
-                    data-category="free"
-                >
-
-                    <div class="drill-top">
-
-                        <div class="drill-icon">
-                            🏀
-                        </div>
-
-                        <span class="difficulty easy">
-                            Beginner
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Free Throw Practice
-                    </h3>
-
-                    <p>
-                        Practice your free throws while developing
-                        a consistent routine before every shot.
-                    </p>
-
-
-                    <div class="drill-info">
-
-                        <div>
-                            ⏱️
-                            <span>
-                                5–10 min
-                            </span>
-                        </div>
-
-                        <div>
-                            🏀
-                            <span>
-                                20 shots
-                            </span>
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="start-drill"
-                        data-drill="Free Throw Practice"
-                    >
-                        Start Drill
-                    </button>
-
-                </article>
-
-
-
-                <!-- CATCH AND SHOOT -->
-
-                <article
-                    class="drill-card"
-                    data-category="three"
-                >
-
-                    <div class="drill-top">
-
-                        <div class="drill-icon">
-                            ⚡
-                        </div>
-
-                        <span class="difficulty hard">
-                            Advanced
-                        </span>
-
-                    </div>
-
-
-                    <h3>
-                        Catch & Shoot
-                    </h3>
-
-                    <p>
-                        Practice getting your feet set quickly and
-                        shooting smoothly after receiving the ball.
-                    </p>
-
-
-                    <div class="drill-info">
-
-                        <div>
-                            ⏱️
-                            <span>
-                                10 min
-                            </span>
-                        </div>
-
-                        <div>
-                            🏀
-                            <span>
-                                30 shots
-                            </span>
-                        </div>
-
-                    </div>
-
-
-                    <button
-                        class="start-drill"
-                        data-drill="Catch & Shoot"
-                    >
-                        Start Drill
-                    </button>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </main>
-
-
-
-    <!-- BOTTOM NAVIGATION -->
+    <!-- ==================== NAVIGATION ==================== -->
 
     <nav class="bottom-nav">
 
-        <a
-            href="../index.html"
-            class="nav-item"
+        <button
+            class="nav-button active"
+            data-page="home-page"
         >
-
-            <span>
-                ⌂
-            </span>
-
-            Home
-
-        </a>
+            <i class="fa-solid fa-house"></i>
+            <span>Home</span>
+        </button>
 
 
-        <a
-            href="../setup/setup.html"
-            class="nav-item"
+        <button
+            class="nav-button"
+            data-page="setup-page"
         >
-
-            <span>
-                🎯
-            </span>
-
-            Goal
-
-        </a>
+            <i class="fa-solid fa-basketball"></i>
+            <span>Shoot</span>
+        </button>
 
 
-        <a
-            href="../shooting/shooting.html"
-            class="nav-item"
+        <button
+            class="nav-button"
+            data-page="drills-page"
         >
-
-            <span>
-                🏀
-            </span>
-
-            Shooting
-
-        </a>
+            <i class="fa-solid fa-dumbbell"></i>
+            <span>Drills</span>
+        </button>
 
 
-        <a
-            href="../results/results.html"
-            class="nav-item"
+        <button
+            class="nav-button"
+            data-page="history-page"
         >
-
-            <span>
-                ▥
-            </span>
-
-            Results
-
-        </a>
-
-
-        <a
-            href="drills.html"
-            class="nav-item active"
-        >
-
-            <span>
-                △
-            </span>
-
-            Drills
-
-        </a>
-
-
-        <a
-            href="../history/history.html"
-            class="nav-item"
-        >
-
-            <span>
-                ◷
-            </span>
-
-            History
-
-        </a>
+            <i class="fa-solid fa-chart-line"></i>
+            <span>History</span>
+        </button>
 
     </nav>
 
 
-
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
-
 </html>

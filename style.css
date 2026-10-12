@@ -1,0 +1,974 @@
+/**RESET**/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f5f5;
+    color: #222;
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+
+/**PAGES**/
+
+.page {
+    display: none;
+    min-height: 100vh;
+}
+
+.page.active {
+    display: block;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px 50px;
+}
+
+
+/**HEADER**/
+
+.header {
+    background: #17202a;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+.logo {
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.header h1 {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.header p {
+    color: #ccc;
+    font-size: 17px;
+}
+
+
+/**HOME**/
+
+.start-section {
+    max-width: 800px;
+    margin: 40px auto;
+    background: white;
+    padding: 45px 30px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.start-section h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.start-section p {
+    max-width: 600px;
+    margin: 0 auto 25px;
+    line-height: 1.7;
+    color: #666;
+    font-size: 16px;
+}
+
+/**Buttons**/
+
+.main-button {
+    border: none;
+    background: #ff6900;
+    color: white;
+    padding: 16px 28px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: 0.2s;
+}
+
+.main-button:hover {
+    background: #e85d00;
+    transform: translateY(-2px);
+}
+
+.main-button:active {
+    transform: translateY(0);
+}
+
+.main-button.full {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.secondary-button {
+    width: 100%;
+    border: 2px solid #ddd;
+    background: white;
+    color: #333;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.secondary-button:hover {
+    border-color: #ff6900;
+    color: #ff6900;
+}
+
+.small-button {
+    border: 1px solid #ddd;
+    background: white;
+    color: #444;
+    padding: 9px 14px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.small-button:hover {
+    border-color: #ff6900;
+    color: #ff6900;
+}
+
+.back-button {
+    border: none;
+    background: transparent;
+    color: #555;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    padding: 5px 0;
+}
+
+.back-button:hover {
+    color: #ff6900;
+}
+
+/**RECENT**/
+
+.recent-section {
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.recent-section h2,
+.features h2 {
+    margin-bottom: 18px;
+    font-size: 24px;
+}
+
+.stats-card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: white;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+}
+
+.stat {
+    text-align: center;
+    padding: 25px 15px;
+    border-right: 1px solid #eee;
+}
+
+.stat:last-child {
+    border-right: none;
+}
+
+.stat-number {
+    display: block;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.stat-label {
+    display: block;
+    color: #777;
+    font-size: 13px;
+}
+
+.no-session {
+    color: #888;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/**FEATURES**/
+
+.features {
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.feature-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+    transition: 0.2s;
+}
+
+.feature-card:hover {
+    transform: translateY(-3px);
+}
+
+.feature-icon {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+/**FOOTER**/
+
+footer {
+    color: #888;
+    text-align: center;
+    padding: 18px 20px;
+    font-size: 14px;
+}
+
+/**PAGE HEADER**/
+
+.page-header {
+    text-align: center;
+    margin: 10px 0 35px;
+}
+
+.page-icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.page-header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    color: #777;
+    font-size: 15px;
+}
+
+
+/**CARDS**/
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.card h2 {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+
+/**GOAL SETUP**/
+
+.goal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.goal-button {
+    border: 2px solid #e5e5e5;
+    background: white;
+    border-radius: 12px;
+    padding: 22px 15px;
+    text-align: center;
+    transition: 0.2s;
+}
+
+.goal-button:hover {
+    border-color: #ff6900;
+}
+
+.goal-button.selected {
+    border-color: #ff6900;
+    background: #fff5ed;
+}
+
+.goal-button strong {
+    display: block;
+    font-size: 22px;
+    margin-bottom: 7px;
+}
+
+.goal-button span {
+    color: #777;
+    font-size: 13px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/**INPUTS**/
+
+.card label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 15px 0 7px;
+}
+
+.card input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    font-size: 16px;
+    outline: none;
+}
+
+.card input:focus {
+    border-color: #ff6900;
+}
+
+
+/**GOAL PREVIEW**/
+
+.goal-preview {
+    background: #171717;
+    color: white;
+    border-radius: 14px;
+    padding: 30px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.goal-preview p {
+    color: #aaa;
+    font-size: 14px;
+    margin-bottom: 7px;
+}
+
+.goal-preview strong {
+    display: block;
+    font-size: 38px;
+    margin-bottom: 7px;
+}
+
+.goal-preview > span {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.goal-preview b {
+    color: #ff6900;
+}
+
+
+/**SESSION**/
+
+.session-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 15px;
+}
+
+.session-header h1 {
+    font-size: 30px;
+    margin-top: 6px;
+}
+
+.orange-text {
+    color: #ff6900;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/**PROGRESS**/
+
+.shot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.shot-row span {
+    color: #666;
+}
+
+.shot-row strong {
+    font-size: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #eee;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    background: #ff6900;
+    border-radius: 20px;
+    transition: width 0.25s ease;
+}
+
+
+/**SESSION STATS**/
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.big-stat {
+    background: white;
+    border-radius: 14px;
+    padding: 25px 15px;
+    text-align: center;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.big-number {
+    display: block;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.big-stat > span:last-child {
+    color: #777;
+    font-size: 13px;
+}
+
+.make-stat .big-number {
+    color: #159447;
+}
+
+.miss-stat .big-number {
+    color: #d64545;
+}
+
+
+/**SHOOTING CARD**/
+
+.shooting-card {
+    text-align: center;
+    padding: 35px 25px;
+}
+
+.shooting-card h2 {
+    margin-bottom: 8px;
+}
+
+.shooting-card p {
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.shot-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.shot-button {
+    border: none;
+    padding: 25px 15px;
+    border-radius: 12px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.shot-button span {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+.make-button {
+    background: #159447;
+}
+
+.make-button:hover {
+    background: #117b3b;
+    transform: translateY(-2px);
+}
+
+.miss-button {
+    background: #d64545;
+}
+
+.miss-button:hover {
+    background: #b93737;
+    transform: translateY(-2px);
+}
+
+
+/**SESSION GOAL**/
+
+.session-goal {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+.session-goal strong {
+    color: #222;
+    font-size: 17px;
+    margin-left: 5px;
+}
+
+
+/**RESULTS**/
+
+.result-main {
+    text-align: center;
+    padding: 40px 25px;
+}
+
+.result-main > p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.result-percentage {
+    font-size: 65px;
+    font-weight: bold;
+    color: #ff6900;
+    margin-bottom: 10px;
+}
+
+.result-main h2 {
+    margin-bottom: 8px;
+}
+
+.result-main > p:last-child {
+    margin-bottom: 0;
+}
+
+
+/**RESULT STATS**/
+
+.result-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.result-stat {
+    background: white;
+    text-align: center;
+    padding: 22px 10px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.result-number {
+    display: block;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.result-stat span:last-child {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/**RESULT GOAL**/
+
+.result-goal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.result-goal span {
+    color: #777;
+}
+
+.result-goal strong {
+    font-size: 20px;
+}
+
+
+/**FEEDBACK**/
+
+.feedback-card {
+    border-left: 5px solid #ff6900;
+}
+
+.feedback-card h2 {
+    margin-bottom: 10px;
+}
+
+.feedback-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+
+/**BUTTON STACK**/
+
+.button-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+
+/**DRILLS**/
+
+.recommendation-card {
+    border-left: 5px solid #ff6900;
+}
+
+.recommendation-card h2 {
+    margin-bottom: 10px;
+}
+
+.recommendation-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+.drill-card {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 25px;
+    margin-bottom: 15px;
+    border-radius: 14px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.06);
+}
+
+.drill-number {
+    width: 50px;
+    height: 50px;
+    flex-shrink: 0;
+    background: #171717;
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.drill-content {
+    flex: 1;
+}
+
+.drill-content h2 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.drill-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.drill-info {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.drill-info span {
+    color: #777;
+    font-size: 13px;
+}
+
+
+/**HISTORY**/
+
+.history-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.history-title h2 {
+    margin-bottom: 0;
+}
+
+.history-item {
+    border-top: 1px solid #eee;
+    padding: 18px 0;
+}
+
+.history-item:first-child {
+    border-top: none;
+    padding-top: 0;
+}
+
+.history-item:last-child {
+    padding-bottom: 0;
+}
+
+.history-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.history-date {
+    color: #777;
+    font-size: 13px;
+}
+
+.history-accuracy {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6900;
+}
+
+.history-details {
+    display: flex;
+    gap: 20px;
+    color: #666;
+    font-size: 13px;
+}
+
+
+/**BOTTOM NAVIGATION**/
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background: white;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+}
+
+.nav-button {
+    width: 120px;
+    border: none;
+    background: transparent;
+    color: #888;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    transition: 0.2s;
+}
+
+.nav-button i {
+    font-size: 19px;
+}
+
+.nav-button:hover {
+    color: #ff6900;
+}
+
+.nav-button.active {
+    color: #ff6900;
+}
+
+
+/**RESPONSIVE**/
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 35px 20px;
+    }
+
+    .header h1 {
+        font-size: 30px;
+    }
+
+    .header p {
+        font-size: 15px;
+    }
+
+    .start-section {
+        margin: 25px 15px 35px;
+        padding: 35px 20px;
+    }
+
+    .start-section h2 {
+        font-size: 27px;
+    }
+
+    .recent-section,
+    .features {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .goal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-grid,
+    .result-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-card {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .stat:last-child {
+        border-bottom: none;
+    }
+
+    .shot-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .session-header {
+        align-items: flex-start;
+    }
+
+    .session-header h1 {
+        font-size: 25px;
+    }
+
+    .drill-card {
+        gap: 12px;
+    }
+
+    .drill-number {
+        width: 42px;
+        height: 42px;
+    }
+
+    .history-top {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .page-container {
+        padding: 25px 15px 40px;
+    }
+
+    .page-header h1 {
+        font-size: 27px;
+    }
+
+    .result-percentage {
+        font-size: 55px;
+    }
+
+    .bottom-nav {
+        height: 65px;
+    }
+
+    .nav-button {
+        width: 25%;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    .main-button {
+        width: 100%;
+    }
+
+    .session-header {
+        flex-direction: column;
+    }
+
+    .session-header .small-button {
+        align-self: flex-start;
+    }
+
+    .goal-preview strong {
+        font-size: 32px;
+    }
+
+    .drill-info {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+}
